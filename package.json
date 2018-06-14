@@ -5,4 +5,8 @@
     "bootstrap": "4",
     "jquery": "^3.3.1"
   }
+  "engines": {
+    "yarn": "1.6.0",
+    "node": "6.11.2"
+  }
 }

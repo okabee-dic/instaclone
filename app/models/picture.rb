@@ -5,4 +5,7 @@ class Picture < ApplicationRecord
   has_many :favorite_users, through: :favorites, source: :user
   
   belongs_to :user, optional: true
+  
+  validates :content, presence: true
+  validates :image, presence: true
 end

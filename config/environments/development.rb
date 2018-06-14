@@ -61,4 +61,6 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'railstest-okabee326.c9users.io' }
   config.action_mailer.delivery_method = :letter_opener
+  
+  config.consider_all_requests_local       = false
 end
