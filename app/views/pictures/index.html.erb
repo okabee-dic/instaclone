@@ -4,11 +4,13 @@
   <div class="container">
     <div class="row">
 <% @pictures.each do |p| %>
+      
       <div class="posts col-sm-12">
         <p><%= p.user.name %></p>
         <div class="post_image">
+          <a href="<%= picture_path(p.id) %>" class="link_to_post">
           <%= image_tag p.image.url %>
-        
+         </a>
         </div>
         <div class="post_content">
           <p><%= p.content %></p>
