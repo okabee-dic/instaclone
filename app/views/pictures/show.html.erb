@@ -1,0 +1,23 @@
+<div class="container posts">
+  <div class="">
+    <%= @picture.user.name %>
+  </div>
+  <div class="post_image">
+    <%= image_tag @picture.image.url %>
+  </div>
+  <div class="post_content">
+    <%= @picture.content %>
+  </div>
+  <div>
+    <% if @picture.user != current_user && logged_in? %>
+        <div class="favbtn">
+        <% @favorite = current_user.favorites.find_by(picture_id: @picture.id) %>
+          <% if @favorite.present? %>
+            <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id, from_show: true), method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id, from_show: true), method: :post, class: 'btn btn-primary' %>
+         <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instaclone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="mainContainer">
+    <header>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <a class="navbar-brand" href="/">Instaclone</a>
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <% if logged_in? %>
+    <% current_user %>
+    <li class="nav-item">
+      <%= link_to current_user.email, user_path(@current_user), { :class => "nav-link"}  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "新規投稿", new_picture_path, { :class => "nav-link"}  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "お気に入り", favorites_path, { :class => "nav-link"}  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "ログアウト" , session_path(@current_user), {:class => "nav-link", :method => "delete"} %>
+    </li>
+    <% else %>
+    <li class="nav-item">
+      <%= link_to "ログイン", new_session_path, { :class => "nav-link"}  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "新規登録", new_user_path, { :class => "nav-link"}  %>
+    </li>
+    <% end %>
+  </ul>
+
+</nav>
+  </header>
+  <div>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </div>
+    <%= yield %>
+  <footer class="footer">
+    Copyright(C) 2018- Instaclone
+  </footer>
+  </div>
+  </body>
+</html>

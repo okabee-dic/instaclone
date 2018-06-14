@@ -1,0 +1,86 @@
+// Place all the styles related to the pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div, p, section,  footer {
+  box-sizing: border-box;
+  margin: 0;  
+  padding: 0; 
+}
+
+html {
+  height: 100%;
+  width: 100%;  
+}
+
+body {
+  height: 100%;
+  width: 100%;  
+  
+  background-color: #fafafa;
+}
+
+.mainContainer {
+  min-height: 100%;
+  width: 100%;  
+  padding-bottom: 40px;
+  position:relative;
+}
+
+.navbar {
+  border-bottom: 1px solid #aaa;
+  box-shadow: 0px 4px 4px rgba(0.5,0.5,0.5,0.05);
+}
+
+.posts {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin: 20px;
+  
+  .post_image {
+    width: 100%;
+    text-align :center;
+  }
+  
+  .post_content {
+    text-align:center;
+  }
+  
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    
+  }
+}
+
+.picture_form {
+  .picture_image {
+    padding: 10px;
+    
+    img {
+      max-width: 100%;  
+    }
+    
+  }
+}
+
+.editbtn, .deletebtn {
+  a {
+    color:white;
+    text-decoration: none;
+  }
+}
+
+.favorites_list {
+  padding: 20px;
+}
+
+.footer {
+  height: 40px; 
+  width: 100%;  
+  position: absolute;
+  bottom: 0;
+  background-color: #444;
+  color: white;
+  text-align: center;
+}

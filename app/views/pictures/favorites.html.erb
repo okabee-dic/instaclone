@@ -1,0 +1,27 @@
+<div class="favorites_list">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    <th>picture_id</th>
+    <th>user_name</th>
+    <th>content</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @favorites.each do |f| %>
+
+<tr>
+  <td><%= link_to f.picture.id, picture_path(f.picture.id) %></td>
+  <td><%= f.picture.user.name %></td>
+  <td><%= f.picture.content %></td>
+</tr>
+
+<% end %>
+<% if @favorites.length == 0 %>
+<tr>
+  <td colspan="3">ないです。</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
